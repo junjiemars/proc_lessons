@@ -50,7 +50,12 @@ filte out the unique __include__ paths from *stdout* then replace **X**, **Y**, 
 ## Pro*C Programming
 
 * A Simple Pro*C Source File: simple.pc
-* Makefile
+
+Get the Oracle connection string from $ORA_CONN environment variable then connect to 
+the Oracle database.
+* Makefile: simple.mk, copied from $ORACLE_HOME/sdk/demo/demo/demo_proc_id.mk.
+
+You just needs to change __MAKEFILE__ to __simple.mk__ and __PROCDEMO__ to __simple__
 
 
 
@@ -58,16 +63,20 @@ filte out the unique __include__ paths from *stdout* then replace **X**, **Y**, 
 
 ***On Linux/Mac***
 
+* Build __simple__
+
 ```shell
-make -f p.mk
+make -f simple.mk
 ```
 
 ## Run
 
 ***On Linux/Mac***
 
+* Run __simple__
+
 ```shell
-ORA_CONN="<username>/<password>@<remote-address>:<port>/<sid>" ./p
+ORA_CONN="<username>/<password>@<remote-address>:<port>/<sid>" ./simple
 ```
 
 

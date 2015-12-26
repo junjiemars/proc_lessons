@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+
+# Pro*C files
+*.lis
+simple.c
+simple
