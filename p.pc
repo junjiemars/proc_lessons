@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define NAME_LEN 64
+
+typedef struct {
+    int id;
+    varchar name[NAME_LEN];
+    float salary;
+} employee;
+
+typedef struct {
+    int id_i;
+    short name_i;
+    short salary_i;
+} employee_indicator;
+
+#include <sqlca.h>
+
+void on_sql_error(const char *);
+int get_employee(int, employee *);
+
+int main(int argc, const char *argv[]) {
+    const char *conn = getenv("ORA_CONN");
+    if (!conn) {
+        printf("! require ORA_CONN env variable\n");
+        return (1);
+    }
+
+    EXEC SQL WHENEVER SQLERROR DO on_sql_error("! sql error:\n");
+
+    EXEC SQL CONNECT :conn;
+    printf("\n# connected to oracle via: %s\n", conn);
+
+    employee e199;
+    get_employee(199, &e199);
+    printf("# %i, %s, %f\n", e199.id, e199.name.arr, e199.salary);
+
+    EXEC SQL COMMIT WORK RELEASE;
+
+    return (0);
+}
+
+void on_sql_error(const char *msg) {
+    char err_msg[128];
+    int buf_len, msg_len;
+
+    EXEC SQL WHENEVER SQLERROR CONTINUE;
+    printf("\n# %s\n", msg);
+    buf_len = sizeof(err_msg);
+    sqlglm(err_msg, &buf_len, &msg_len);
+
+    if (msg_len > buf_len) {
+        msg_len = buf_len;
+    }
+    printf("# %.*s\n", msg_len, err_msg);
+    EXEC SQL ROLLBACK RELEASE;
+}
+
+int get_employee(int id, employee *e) {
+    EXEC SQL SELECT employee_id, last_name, salary INTO :e
+        FROM employees WHERE employee_id=:id;
+    return 1;
+}
+

@@ -53,6 +53,7 @@ filte out the unique __include__ paths from *stdout* then replace **X**, **Y**, 
 the Oracle database.
 * Makefile: simple.mk, copied from $ORACLE_HOME/sdk/demo/demo/demo_proc_id.mk. 
 You just needs to change __MAKEFILE__ to __simple.mk__ and __PROCDEMO__ to __simple__
+* More practical program: p.pc
 
 
 ## Build
@@ -65,6 +66,12 @@ You just needs to change __MAKEFILE__ to __simple.mk__ and __PROCDEMO__ to __sim
 make -f simple.mk
 ```
 
+* Build __practical__ program
+
+```shell
+make -f p.mk
+```
+
 ## Run
 
 ***On Linux/Mac***
@@ -72,9 +79,14 @@ make -f simple.mk
 * Run __simple__ program
 
 ```shell
-ORA_CONN="<username>/<password>@<remote-address>:<port>/<sid>" ./simple
+ORA_CONN="<username>/<password>@<oracle-address>:<port>/<sid>" ./simple
 ```
 
+* Run __practical__ program
+
+```shell
+ORA_CONN="<username>/<password>@<oracle-address>:<port>/<sid>" ./p
+```
 
 
 ## References
