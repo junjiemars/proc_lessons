@@ -8,7 +8,14 @@ to download *__Basic__ and __Precompiler__ Instant Client Packages* and take car
 
 ## Setup Pro*C Programming Environment
 
+
 ### Install *__Basic__ and __Precompiler__ Instant Client Packages*
+
+* download same version __Basic__ and __Precompiler__ instant client packages;
+* ```mkdir oracle``` somewhere;
+* copy the packages into ```oracle``` directory;
+* unzip the packages, finally you'll get ```oracle/instantclient_<major-version>_<minor-version>``` directory.
+
 
 ### Setup Environment Variables
 
