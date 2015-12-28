@@ -27,12 +27,7 @@ In **~/.bashrc** file to setup $ORACLE_BASE, $ORACLE_HOME, Pro*C Include Path an
 ORACLE_BASE=$HOME/<instant-client-parent-dir>
 ORACLE_HOME=$ORACLE_BASE/<instant-client-dir>
 export ORACLE_HOME
-if [[ -z ${LD_LIBRARY_PATH} ]]; then
-  LD_LIBRARY_PATH=$ORACLE_HOME
-else
-  LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
-fi
-export LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 PATH=$ORACLE_BASE:$ORACLE_HOME:$ORACLE_HOME/sdk:$PATH
 export PATH
 ```
