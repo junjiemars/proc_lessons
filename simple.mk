@@ -4,16 +4,16 @@
 ###############################################################################
 #  Usage :
 # For compiling proc demos
-#    make -f demo_proc_ic.mk
+#    make -f simple.mk
 #
-# For precompiling, compiling & linking the procdemo.pc file
-#    make -f demo_proc_ic.mk build EXE=procdemo OBJS=procdemo.o
+# For precompiling, compiling & linking the simple.pc file
+#    make -f simple.mk build EXE=simple OBJS=simple.o
 #
 # In general, for any proc program
-#    make -f demo_proc_ic.mk build EXE=<exename> OBJS="<list of dependent objs>"
+#    make -f simple.mk build EXE=<exename> OBJS="<list of dependent objs>"
 #
 #    To make use of any PROC options during precompilation, 
-#        make -f demo_proc_ic.mk build PROCFLAGS="<list of proc options>" 
+#        make -f simple.mk build PROCFLAGS="<list of proc options>" 
 #            EXE=<exename> OBJS="<list of dependent objs>"
 #
 # NOTES: 
