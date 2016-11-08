@@ -1,4 +1,4 @@
-# proc-tutorial
+# Pro*C Lessons
 Oracle Pro*C Programming Lessons
 
 ## Requirements
