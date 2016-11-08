@@ -1,5 +1,5 @@
 # proc-tutorial
-Oracle Pro*C Programming Tutorial
+Oracle Pro*C Programming Lessons
 
 ## Requirements
 * Go to [Oracle Instant Client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html) 
